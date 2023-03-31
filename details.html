@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country details</title>
+
+    <script>
+        let localS = localStorage.getItem('theme')
+        let themeToSet = localS
+
+        if (!localS) {
+            themeToSet = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        }
+
+        document.documentElement.setAttribute('data-theme', themeToSet)
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./details.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="index.html">
+            <h1>Where in the world?</h1>
+        </a>
+        <div class="switch-mode">
+            <button type="button" title="theme" class="themeSwitcher">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <p class="themeSwitch-paragraph">Dark Mode</p>
+        </div>
+    </header>
+
+    <div class="wrapper country-details-wrapper">
+    </div>
+</body>
+
+</html>
